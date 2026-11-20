@@ -5,468 +5,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Bianca's personal portfolio">
-  <title>Bianca's Portfolio</title>
-
-  <style>
-    :root {
-      --navy: #142744;
-      --blue: #456b96;
-      --light: #f5f7fa;
-      --text: #344054;
-      --border: #e4e8ef;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: white;
-      line-height: 1.7;
-    }
-
-    header {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 22px 8%;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 25px;
-      font-weight: bold;
-      color: var(--navy);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    .nav-links a {
-      color: var(--navy);
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    section {
-      padding: 85px 8%;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .hero {
-      min-height: 490px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 720px;
-    }
-
-    .eyebrow {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3 {
-      color: var(--navy);
-    }
-
-    h1, h2 {
-      font-family: Georgia, serif;
-    }
-
-    h1 {
-      font-size: clamp(38px, 6vw, 62px);
-      line-height: 1.15;
-      margin: 15px 0 20px;
-    }
-
-    h2 {
-      font-size: 34px;
-      margin: 0 0 24px;
-    }
-
-    h3 {
-      margin-top: 0;
-      font-size: 19px;
-    }
-
-    p {
-      margin-top: 0;
-    }
-
-    .hero p {
-      font-size: 17px;
-      max-width: 620px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 13px 26px;
-      background: var(--navy);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 14px;
-      transition: background 0.2s;
-    }
-
-    .button:hover {
-      background: var(--blue);
-    }
-
-    .alternate {
-      background: var(--light);
-    }
-
-    .section-intro {
-      max-width: 720px;
-      margin-bottom: 30px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px;
-    }
-
-    .card p {
-      margin-bottom: 0;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
-    }
-
-    .tag {
-      background: var(--light);
-      border: 1px solid var(--border);
-      padding: 10px 16px;
-      border-radius: 5px;
-      color: var(--navy);
-      font-size: 14px;
-    }
-
-    .project-label {
-      font-size: 12px;
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 25px;
-    }
-
-    .contact-links a {
-      color: var(--blue);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 28px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 20px 6%;
-      }
-
-      section {
-        padding: 65px 6%;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 95px;
-        padding-bottom: 95px;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .nav-links a {
-        font-size: 13px;
-      }
-
-      h2 {
-        font-size: 29px;
-      }
-    }
-  </style>
+  <title>Home | Bianca's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Bianca's Portfolio</a>
 
-  <!-- NAVIGATION -->
-  <header>
-    <nav>
-      <a href="#home" class="logo">Bianca's Portfolio</a>
-
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <div class="links">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Welcome to my portfolio</div>
 
-    <!-- HOME -->
-    <section id="home" class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">Welcome to my portfolio</div>
+        <h1>Hi, I'm Bianca!</h1>
 
-          <h1>Hi, I'm Bianca!</h1>
-
-          <p>
-            I'm a Computer Programming and Analysis student
-            at Valencia College with a bachelor's degree
-            in Mining Engineering from Brazil.
-          </p>
-
-          <p>
-            I enjoy learning new things, solving problems,
-            and working with others. I'm excited to continue
-            developing my skills and exploring opportunities
-            in technology.
-          </p>
-
-          <a href="#about" class="button">
-            More About Me
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT ME -->
-    <section id="about" class="alternate">
-      <div class="container">
-        <h2>About Me</h2>
-
-        <div class="section-intro">
-          <p>
-            I'm originally from Brazil, where I earned
-            my bachelor's degree in Mining Engineering.
-            After moving to the United States, I decided
-            to explore a new career path and began studying
-            Computer Programming and Analysis at
-            Valencia College.
-          </p>
-
-          <p>
-            My experiences have helped me become more
-            adaptable, independent, and open to new
-            challenges. I value teamwork, communication,
-            and continuous learning.
-          </p>
-
-          <p>
-            I'm currently focused on improving my skills,
-            gaining experience through academic projects,
-            and preparing for my future career.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education">
-      <div class="container">
-        <h2>Education</h2>
-
-        <div class="cards">
-
-          <div class="card">
-            <h3>Valencia College</h3>
-            <p>
-              Computer Programming and Analysis
-            </p>
-            <p>
-              Currently studying
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Bachelor's Degree</h3>
-            <p>
-              Mining Engineering
-            </p>
-            <p>
-              Brazil
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="alternate">
-      <div class="container">
-        <h2>Skills</h2>
-
-        <p class="section-intro">
-          Here are some of the skills I've developed
-          through my education and experiences.
+        <p class="lead">
+          I'm a Computer Programming and Analysis student
+          at Valencia College with a bachelor's degree
+          in Mining Engineering from Brazil.
         </p>
 
-        <div class="tag-list">
-          <span class="tag">Problem-Solving</span>
-          <span class="tag">Teamwork</span>
-          <span class="tag">Communication</span>
-          <span class="tag">Adaptability</span>
-          <span class="tag">Organization</span>
-          <span class="tag">Project Planning</span>
-          <span class="tag">Continuous Learning</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-
-        <p class="section-intro">
-          This section highlights academic projects
-          and work completed during my studies.
+        <p class="intro">
+          I enjoy learning, solving problems, and working
+          with others. I'm excited to continue developing
+          my skills and exploring opportunities in technology.
         </p>
 
-        <div class="cards">
-
-          <div class="card">
-            <div class="project-label">
-              Simulated Academic Project
-            </div>
-
-            <h3>Global Treps Project</h3>
-
-            <p>
-              A college project focused on planning
-              a fictional website for global
-              entrepreneurship events.
-            </p>
-
-            <p>
-              I worked on project planning documents,
-              including a scope statement, SMART
-              milestones, a Gantt chart, and a
-              requirements matrix.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="project-label">
-              Portfolio Project
-            </div>
-
-            <h3>Personal Portfolio Website</h3>
-
-            <p>
-              A personal website created to share
-              my education, skills, and academic projects.
-            </p>
-
-            <p>
-              Built using HTML and CSS and hosted
-              with GitHub Pages.
-            </p>
-          </div>
-
-        </div>
+        <a class="btn" href="projects.html">
+          View My Projects
+        </a>
       </div>
     </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="alternate">
-      <div class="container">
-        <h2>Contact</h2>
-
-        <p>
-          Thank you for visiting my portfolio!
-          Feel free to explore my GitHub profile
-          and follow my learning journey.
-        </p>
-
-        <div class="contact-links">
-          <a href="https://github.com/bguimaraesbarrosl"
-             target="_blank"
-             rel="noopener noreferrer">
-            GitHub Profile
-          </a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Bianca's Portfolio</p>
+  <footer class="footer">
+    Bianca's Portfolio
   </footer>
-
 </body>
 </html>
